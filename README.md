@@ -14,6 +14,11 @@ Functionality:
 
 POST /db
 Post all book from external API (Google Api Book)
+Example:
+{
+"title": "Hobbit"
+}
+
 
 Get /books 
 Get all books from database 
