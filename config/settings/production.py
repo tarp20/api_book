@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 
-
 DB_NAME = os.environ.get('DB_NAME')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
@@ -124,9 +123,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
     'SEARCH_PARAM': 'author',
     'ORDERING_PARAM': 'sort',
 }
-
 
 STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
